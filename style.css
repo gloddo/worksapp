@@ -176,5 +176,7 @@
         align-self: center;
         padding: 5px 15px;
         font-size: 1.1em;
+        border: 2px solid #0fa3b1;
+        border-radius: 15px;
     }
 }
