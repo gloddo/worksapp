@@ -114,6 +114,7 @@
 
     .chat-list {
         padding: 0;
+        padding-top: 120px;
         width: 364px;
         border-right: 1px solid gray;
     }
@@ -155,7 +156,7 @@
     .search-tablet {
         display: block;
         width: 315px;
-        margin: auto;
+        margin: 0 8px;
         height: 34px;
         border: 2px solid #0fa3b1;
         border-radius: 15px;
@@ -163,5 +164,6 @@
         margin-bottom: 10px;
         font-size: 1.3em;
         padding: 5px 15px;
+        position: fixed;
     }
 }
