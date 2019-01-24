@@ -120,8 +120,10 @@
     }
 
     .side-tablet {
-        height: 100%;
-        display: block;
+        height: 768px;
+        display: flex;
+        width: 100%;
+        flex-direction: column-reverse;
     }
 
     .navbar {
@@ -165,5 +167,14 @@
         font-size: 1.3em;
         padding: 5px 15px;
         position: fixed;
+    }
+
+    .chat-input {
+        width: 91%;
+        margin: auto;
+        margin: 5px;
+        align-self: center;
+        padding: 5px 15px;
+        font-size: 1.1em;
     }
 }
