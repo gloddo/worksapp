@@ -54,10 +54,12 @@ nav ul li i {
     padding: 7px;
     display: flex;
     justify-content: space-between;
+    border-bottom: 1px solid #80808045;
 }
 
 .contact {
     flex-grow: 6;
+    width: 53%;
 }
 
 .contact, .contact-right-panel {
@@ -81,8 +83,14 @@ nav ul li i {
     text-align: right;
 }
 
+.c-name, .c-role {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
 .c-badge {
-    text-align: center;
+    text-align: right;
 }
 
 .c-notify {
