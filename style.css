@@ -6,41 +6,42 @@
     padding: 0;
 }
 
-.navbar {
+.navbar, .navbar-tab {
     background-color: #393e41;
     color: #f6f7eb;
 }   
 
-body {
-    padding: 0;
-    margin: 0;
-}
-
-nav {
-    padding: 0 14px;
+.navbar {
     height: 64px; 
+    width: 100%;
+    position: fixed;
 }
-nav ul{
+.navbar ul{
     list-style-type: none;
-    padding: 0;
     display: flex;
-    margin: 0;
     justify-content: space-between;
+    width: 91%;
+    padding: 0 14px;
+    margin: auto;
 }
 
-nav ul li {
+.navbar ul li {
     display: flex;
     padding: 0 ;
     height: 64px;
 }
 
-nav ul li i {
+.navbar ul li i {
    padding-top: 10px;
 
 }
 
 .logo{
     padding: 0 5px;
+}
+
+.chat-list {
+    padding-top: 69px
 }
 
 .single-chat img{
@@ -102,7 +103,7 @@ nav ul li i {
     padding: 0 6px;
 }
 
-.site-tablet {
+.site-tablet, .navbar-tab, .search-tablet {
     display: none;
 }
 
@@ -112,12 +113,55 @@ nav ul li i {
     }
 
     .chat-list {
-        flex-grow: 0;
-        width: 365px;
+        padding: 0;
+        width: 364px;
+        border-right: 1px solid gray;
     }
 
     .side-tablet {
+        height: 100%;
         display: block;
     }
 
+    .navbar {
+        display: none;
+    }
+
+    .navbar-tab {
+        height: 54px;
+        position: fixed;
+        width: 365px;
+        display: block;
+    }
+
+    .navbar-tab ul {
+        list-style-type: none;
+        display: flex;
+        height: 54px;
+        padding: 2px 10px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .tab-icon{
+        flex-grow: 1;
+        text-align: center;
+    }   
+
+    .logo-tab{
+        flex-grow: 4;
+    }
+
+    .search-tablet {
+        display: block;
+        width: 315px;
+        margin: auto;
+        height: 34px;
+        border: 2px solid #0fa3b1;
+        border-radius: 15px;
+        margin-top: 69px;
+        margin-bottom: 10px;
+        font-size: 1.3em;
+        padding: 5px 15px;
+    }
 }
