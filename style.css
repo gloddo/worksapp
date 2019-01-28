@@ -6,11 +6,6 @@
     padding: 0;
 }
 
-.content {
-
-
-}
-
 .navbar, .navbar-tab {
     background-color: #393e41;
     color: #f6f7eb;
@@ -98,7 +93,7 @@
 }
 
 .c-badge {
-    text-align: right;
+    text-align: center;
 }
 
 .c-notify {
@@ -108,11 +103,63 @@
     padding: 0 6px;
 }
 
-.side-tablet, .navbar-tab, .search-tablet {
+.site-tablet, .navbar-tab, .search-tablet {
     display: none;
 }
 
-@media (min-width: 993px) {
+.content {
+    flex-direction: column;
+    display: flex;
+}
+
+.Favourite {
+    display: flex;
+    width: 47%;
+    height: 130px;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5px;
+    border: 1px solid gray;
+    border-radius: 15px;
+}
+
+.Favourite-list {
+    padding-top: 69px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.Favourite picture img {
+    height: 64px;
+    width: 64px;
+    display: flex;
+    border: 3px solid green;
+    border-radius: 8px;
+}
+
+.foto-notification {
+    align-content: center;
+    display: flex;
+    padding: 5px;
+}
+
+.f-notify {
+    border: 3px solid #0fa3b1;
+    border-radius: 20px;
+    text-align: center;
+    padding: 0 6px;
+    font-size: 0.5em;
+    margin-left: 28px;
+}
+
+.f-name, .f-role {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 1em;
+}
+
+@media (min-width: 700px) {
     .content {
         display: flex;
     }
@@ -122,20 +169,11 @@
         padding-top: 120px;
         width: 364px;
         border-right: 1px solid gray;
-        align-self: flex-end;
-        white-space: nowrap;
-        overflow-y: scroll;
-        flex-grow: 0;
     }
 
     .side-tablet {
-
-        height: 740px;
-        display: flex;
-        padding: 14px;
-        flex-direction: column-reverse;
-        align-items: center;
-        flex-grow: 5;
+        height: 100%;
+        display: block;
     }
 
     .navbar {
@@ -158,12 +196,12 @@
         justify-content: space-between;
     }
 
-    .tab-icon{
+    .tab-icon {
         flex-grow: 1;
         text-align: center;
     }   
 
-    .logo-tab{
+    .logo-tab {
         flex-grow: 4;
     }
 
@@ -179,15 +217,5 @@
         font-size: 1.3em;
         padding: 5px 15px;
         position: fixed;
-    }
-
-    .chat-input {
-        width: 97%;
-        margin: 5px;
-        padding: 5px 15px;
-        font-size: 1.1em;
-        border: 2px solid #0fa3b1;
-        border-radius: 15px;
-        margin-bottom: 0;
     }
 }
