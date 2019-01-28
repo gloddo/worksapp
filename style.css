@@ -132,11 +132,9 @@
 
         height: 740px;
         display: flex;
-        width: 631px;
         padding: 14px;
         flex-direction: column-reverse;
-        overflow-y: scroll;
-        align-items: flex-end;
+        align-items: center;
         flex-grow: 5;
     }
 
@@ -190,5 +188,6 @@
         font-size: 1.1em;
         border: 2px solid #0fa3b1;
         border-radius: 15px;
+        margin-bottom: 0;
     }
 }
