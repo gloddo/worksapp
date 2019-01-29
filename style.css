@@ -115,12 +115,12 @@ a {
   padding: 7px;
 }
 
-.contact-line1 {
+.line1 {
   line-height: 1.2em;
   font-size: 1.1em;
 }
 
-.contact-line2 {
+.line2 {
   font-size: 0.9em;
 }
 
@@ -175,8 +175,7 @@ a {
 .Favourite picture img {
   height: 64px;
   width: 64px;
-  display: flex;
-  border: 3px solid green;
+  border: 3px solid #0fa3b1;
   border-radius: 8px;
 }
 
@@ -192,7 +191,6 @@ a {
     width: 90%;
 }
 
-
 .f-notify {
   border: 3px solid #0fa3b1;
   border-radius: 20px;
@@ -202,13 +200,14 @@ a {
   margin-left: 28px;
 }
 
-
-
 .f-name, .f-role {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  font-size: 1em;
+}
+
+.f-name {
+    font-size: 1em;
 }
 .identity {
   background-color: #f6f7eb;
@@ -424,6 +423,8 @@ a {
     max-width: 400px;
   }
 }
+
+
 .float{
   position:fixed;
   display: flex;
