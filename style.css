@@ -157,7 +157,7 @@ a {
 
 .Favourite {
   display: flex;
-  width: 43%;
+  width: 45%;
   height: 130px;
   flex-direction: column;
   align-items: center;
@@ -170,6 +170,7 @@ a {
   padding-top: 69px;
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 .Favourite picture img {
