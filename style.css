@@ -15,7 +15,7 @@
   height: 64px;
   width: 100%;
   position: fixed;
-  z-index: 999;
+  z-index: 99;
 }
 
 .navbar ul {
@@ -25,26 +25,35 @@
   width: 91%;
   padding: 0 14px;
   margin: auto;
+
 }
 
 .navbar ul li {
-  display: flex;
   padding: 0;
   height: 64px;
+  display: flex;
+  justify-content: center;
 }
 
 .navbar ul li i {
   padding-top: 10px;
 }
 
-.navbar ul li img {
-  margin-top: 5px;
+.n-icon {
   width: 50px;
   height: 50px;
+  margin: 7px 0;
+}
+
+.logo-btn {
+    z-index: 999;
+    height: 64px;
+    width: 110px; 
 }
 
 .logo {
-  padding: 0 5px;
+
+  height:80px;
 }
 
 .picture {
@@ -107,7 +116,7 @@
 }
 
 .c-badge {
-  text-align: center;
+  text-align: right;
 }
 
 .c-notify {
