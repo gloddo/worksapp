@@ -54,7 +54,7 @@
 .logo-btn {
     z-index: 999;
     height: 64px;
-    width: 110px; 
+    width: 110px;
 }
 
 .logo-btn-tab {
@@ -412,3 +412,52 @@
     max-width: 400px;
   }
 }
+.float{
+  position:fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 375px;
+}
+
+.search {
+  margin-top:70px;
+  width: 315px;
+  height: 25px;
+  border: 2px solid #0fa3b1;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+  padding: 5px 15px;
+
+
+}
+
+ .contacts-list{
+   padding-top:115px;
+   padding-left: 10px;
+   padding-right: 10px;
+ }
+
+ .contacts-list ul {
+   padding: 7px 12px;
+   list-style: none;
+ }
+
+ .contacts-list ul li {
+   padding:5px 0px;
+
+ }
+
+ .contacts-list img {
+   height: 44px;
+   width: 44px;
+   vertical-align: middle;
+   border: 3px solid #0fa3b1;
+   border-radius: 8px;
+   margin-right: 7px;
+ }
+
+ .contacts-list h2{
+   font-size: 1.35em;
+ }
