@@ -182,9 +182,16 @@ a {
 
 .foto-notification {
   display: flex;
-  padding: 5px 0;
+   padding-top: 10px;
   justify-content: space-between;
+  width:90%;
+  align-items: center;
 }
+
+.f-text {
+    width: 90%;
+}
+
 
 .f-notify {
   border: 3px solid #0fa3b1;
@@ -194,6 +201,8 @@ a {
   font-size: 0.5em;
   margin-left: 28px;
 }
+
+
 
 .f-name, .f-role {
   text-overflow: ellipsis;
@@ -512,7 +521,7 @@ a {
  .login-form button {
    width: 304px;
    border: 2px solid #0fa3b1;
-   height: 34px;
+   height: 41px;
    border-radius: 10px;
    background-color: #0fa3b1;
    font-weight: bold;
