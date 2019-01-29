@@ -562,3 +562,14 @@ a {
  .new-password-all button {
    margin-top:20px;
  }
+
+ .welcome {
+   padding-top:100px;
+   text-align:center;
+   font-weight: bold;
+   font-size: 1.1em;
+ }
+
+ .first-access {
+   padding-top:15px;
+ }
