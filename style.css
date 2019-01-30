@@ -27,7 +27,7 @@ a {
   list-style-type: none;
   display: flex;
   justify-content: space-between;
-  width: 91%;
+  width: 100%;
   padding: 0 14px;
   margin: auto;
 
@@ -80,8 +80,8 @@ a {
 .chat-pic {
   border:3px solid #0fa3b1;
   padding: 0;
-  width: 44px;
-  height: 44px;
+  width: 50px;
+  height: 50px;
   border-radius: 10px;
 }
 
@@ -243,11 +243,16 @@ a {
   text-align: left;
 }
 
+.message-date .line1{
+    font-size: 0.9em;
+}
+
 .message, .message-sent {
   border: 3px solid #0fa3b1;
   border-radius: 10px;
   background-color: #d6d6d6;
-  max-width: 200px;
+  max-width: 240px;
+  font-size: 0.85em;
   padding: 10px;
   display: flex;
   justify-content: space-between;
@@ -321,7 +326,7 @@ a {
   padding: 5px 15px;
   border: 2px solid #0fa3b1;
   border-radius: 10px;
-  width: 85%;
+  width: 94%;
   margin: 5px;
 }
 
@@ -338,7 +343,8 @@ a {
 
 .chat {
   padding-top: 10px;
-  width: 90%;
+  width:97%;
+  margin: auto;
 }
 
 @media (min-width: 993px) {
@@ -349,7 +355,7 @@ a {
 
   .chat-list {
     padding: 0;
-    padding-top: 120px;
+    padding-top: 105px;
     width: 364px;
     border-right: 1px solid gray;
     height: 768px;
@@ -360,6 +366,7 @@ a {
     height: 768px;
     display: flex;
     padding: 14px;
+    padding-bottom: 8px;
     flex-direction: column-reverse;
     overflow-y: scroll;
     align-items: center;
@@ -410,7 +417,7 @@ a {
   }
 
   .chat-input {
-    width: 91%;
+    width: 100%;
     margin: 5px;
     align-self: center;
     padding: 5px 15px;
@@ -420,7 +427,8 @@ a {
 
   .chat{
     padding: 10px 0px;
-    width:100%;
+    width:97%;
+    margin: auto;
   }
 
   .message, .message-sent{
