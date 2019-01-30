@@ -479,7 +479,9 @@ a {
     max-width: 440px;
   }
 }
-
+.unseen {
+    background-color: #f6f7eb;
+}
 
 .float{
   position:fixed;
