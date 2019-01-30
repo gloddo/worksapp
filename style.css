@@ -338,6 +338,7 @@ a {
 
 .chat {
   padding-top: 10px;
+  width: 90%;
 }
 
 @media (min-width: 993px) {
@@ -351,12 +352,12 @@ a {
     padding-top: 120px;
     width: 364px;
     border-right: 1px solid gray;
-    height: 648px;
+    height: 768px;
     overflow-y: scroll;
   }
 
   .side-tablet {
-    height: 740px;
+    height: 768px;
     display: flex;
     padding: 14px;
     flex-direction: column-reverse;
@@ -396,7 +397,7 @@ a {
 
   .search-tablet {
     display: block;
-    width: 315px;
+    width: 345px;
     margin: 0 8px;
     height: 34px;
     border: 2px solid #0fa3b1;
@@ -438,7 +439,7 @@ a {
 
 .search {
   margin-top:70px;
-  width: 315px;
+  width: 345px;
   height: 25px;
   border: 2px solid #0fa3b1;
   border-radius: 15px;
