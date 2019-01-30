@@ -148,7 +148,7 @@ a {
   padding: 0 6px;
 }
 
-.side-tablet, .navbar-tab, .search-tablet {
+.side-tablet, .navbar-tab, .search-tablet, .tab {
   display: none;
 }
 
@@ -348,9 +348,36 @@ a {
 }
 
 @media (min-width: 993px) {
+  .tab {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tab-contact-name {
+    display: flex;
+    width: 60%;
+    justify-content: space-evenly;
+    height: 54px;
+    align-self: flex-start;
+  }
   .content {
     display: flex;
     flex-direction: row;
+  }
+
+  .tab-chat-icons{
+    display: flex;
+    flex-direction: row;
+    width: 30%;
+    justify-content: space-around;
+  }
+  .top-chat {
+    align-self: flex-end;
+  }
+  .chat-name{
+    font-size: 1.2em;
+    font-weight: lighter;
+    margin-top: 12px;
   }
 
   .chat-list {
@@ -367,21 +394,29 @@ a {
     display: flex;
     padding: 14px;
     padding-bottom: 8px;
-    flex-direction: column-reverse;
+    flex-direction: column;
     overflow-y: scroll;
     align-items: center;
     flex-grow: 5;
+    justify-content: flex-end;
   }
 
-  .navbar {
+  .chat-pic {
+      border:3px solid #0fa3b1;
+      padding: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+  }
+    .no-tab {
     display: none;
   }
 
   .navbar-tab {
     height: 54px;
     position: fixed;
-    width: 365px;
-    display: block;
+    width: 100%;
+    display: flex;
 }
 
   .navbar-tab ul {
@@ -391,6 +426,15 @@ a {
     padding: 0px 10px;
     flex-direction: row;
     justify-content: space-between;
+  }
+
+  .nav-left {
+    width: 365px;
+    flex-grow: 0;
+  }
+
+  .nav-right {
+    flex-grow: 5;
   }
 
   .tab-icon {
@@ -428,11 +472,11 @@ a {
   .chat{
     padding: 10px 0px;
     width:97%;
-    margin: auto;
+    margin: 0;
   }
 
   .message, .message-sent{
-    max-width: 400px;
+    max-width: 440px;
   }
 }
 
