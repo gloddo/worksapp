@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
   <body>
-    <nav class="navbar">
+    <nav class="navbar no-tab">
         <ul>
             <li>
                 <a href="#"><img class="n-icon" src="res/home.png" /></a>
@@ -30,15 +30,53 @@
             </li>
         </ul>
     </nav>
-    <section class="welcome" >
-      <p class="first-access">
-        Welcome to Worksapp!
-        </p>
+    <div class="content">
+        <nav class="navbar-tab">
+          <span class="nav-left">
+            <ul>
+                <a class="logo-btn-tab" href="#">
+                    <li class="logo-tab-cont">
+                        <img class="logo-tab" src="res/logo-ex.png"/>
+                    </li>
+                </a>
+                <li>
+                    <a href="#"><img class="n-tab-icon" src="res/add.png" /></a>
+                </li>
 
-      <p class="first-access">
-        Tap on '+' to add a new conversation.
-        </p>
+                <li>
+                    <a href="#"><img class="n-tab-icon" src="res/menu.png" /></a>
+                </li>
+            </ul>
+          </span>
+        </nav>
+        <input class="search-tablet" placeholder="search" />
+        <section class="chat-list">
+          <section class="welcome no-tab" >
+            <p class="first-access">
+              Welcome to Worksapp!
+              </p>
 
-          </section>
+            <p class="first-access">
+              Tap on '+' to add a new conversation.
+              </p>
+
+                </section>
+
+        </section>
+        <section class="side-tablet">
+          <section class="welcome" >
+            <p class="first-access">
+              Welcome to Worksapp!
+              </p>
+
+            <p class="first-access">
+              Tap on '+' to add a new conversation.
+              </p>
+
+                </section>
+
+        </section>
+    </div>
+  
   </body>
 </html>
