@@ -1,0 +1,33 @@
+[debug] [2019-03-04T11:52:10.504Z] ----------------------------------------------------------------------
+[debug] [2019-03-04T11:52:10.507Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\makki\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-03-04T11:52:10.507Z] CLI Version:   6.4.0
+[debug] [2019-03-04T11:52:10.507Z] Platform:      win32
+[debug] [2019-03-04T11:52:10.507Z] Node Version:  v11.6.0
+[debug] [2019-03-04T11:52:10.509Z] Time:          Mon Mar 04 2019 12:52:10 GMT+0100 (GMT+01:00)
+[debug] [2019-03-04T11:52:10.509Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-03-04T11:52:10.520Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-03-04T11:52:10.520Z] > authorizing via signed-in user
+[debug] [2019-03-04T11:52:10.520Z] [iam] checking project worksapp-born2code for permissions ["firebase.projects.get"]
+[debug] [2019-03-04T11:52:10.522Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/worksapp-born2code:testIamPermissions  
+
+[debug] [2019-03-04T11:52:11.415Z] <<< HTTP RESPONSE 200
+[debug] [2019-03-04T11:52:11.417Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/worksapp-born2code  
+ 
+[debug] [2019-03-04T11:52:12.267Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\makki\Desktop\B2C\worksapp'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2019-03-04T11:52:15.352Z] Fetching environment
+[debug] [2019-03-04T11:52:15.357Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/752738389147:getServerAppConfig  
+ 
+[debug] [2019-03-04T11:52:15.358Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/752738389147/clients/_:getWebAppConfig  
+ 
+[debug] [2019-03-04T11:52:15.657Z] <<< HTTP RESPONSE 200
+[debug] [2019-03-04T11:52:15.658Z] Starting @google-cloud/functions-emulator
+[debug] [2019-03-04T11:52:15.733Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+[debug] [2019-03-04T11:52:18.269Z] Parsing function triggers
+[info] i  functions: No HTTPS functions found. Use firebase functions:shell if you would like to emulate other types of functions.
