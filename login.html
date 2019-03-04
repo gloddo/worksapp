@@ -17,15 +17,15 @@
       <img src="res/logo-blk-b.png" />
     </div>
 
-    <form class="login-form" action="index.html" method="post">
+    <form class="login-form">
       <p class="login-label">
         Username
       </p>
-      <input class="login-input" type="text" name="username" value="">
+      <input class="login-input" id="username" type="text" name="username" value="">
       <p class="login-label">
         Password
       </p>
-      <input class="login-input" type="text" name="password" value="">
+      <input class="login-input" id="password" type="text" name="password" value="">
 
       <span class="check">
 
@@ -35,13 +35,30 @@
           Remember me?
         </p>
       </span>
-      <button type="button" name="button">Submit</button>
+      <button type="button" name="button" onclick="login()">Submit</button>
       <a class="forgot-password" href="#">
         Forgot password?
       </a>
     </form>
-
   </div>
+
+  <script>
+
+    function login () {
+
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+
+    if (username == 'pippo'&& password == 'pippo') {
+        location.href = "chat.html";
+    }else{
+      alert('password errata')
+    }
+
+  }
+
+
+  </script>
 
 </body>
 
