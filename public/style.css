@@ -736,6 +736,10 @@ a {
     justify-content: center;
 }
 
+aside {
+    display: none;
+}
+
 .navbar ul li i {
     padding-top: 10px;
 }
