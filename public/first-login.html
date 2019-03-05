@@ -3,14 +3,70 @@
 	<head>
 		<meta charset="utf-8">
 		<title>WorksApp - First Login</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<link rel="stylesheet" href="jquery/jquery-ui.css">
 	    <script src="jquery/external/jquery/jquery.js"></script>
 	    <script src="jquery/jquery-ui.js"></script>
 	    <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
 	    <link rel="stylesheet" href="style.css">
 	    <script type="text/javascript" src="script/script.js"></script>
+
+		<style media="screen">
+			.form {
+				display: flex;
+				flex-direction: column;
+				width: 375px;
+				padding: 30px;
+			}
+			.form input {
+				font-size: 1.2em;
+				padding: 5px;
+			}
+			.form h4 {
+				margin: 10px 0 5px
+			}
+
+			.form button {
+
+			}
+			.second, .third {
+				display: none;
+			}
+		</style>
 	</head>
 	<body>
-		
+		<h2>Welcome to</h2>
+		<img src="" alt="WorksApp">
+		<section class="form first">
+
+			<h4>Set up your new password:</h4>
+			<input type="password" placeholder="New Password">
+			<h4>Confirm password:</h4>
+			<input type="password" placeholder="New Password">
+			<button type="button" name="next">Next</button>
+		</section>
+		<section class="form second">
+			<h4>Enter your name:</h4>
+			<input type="text" placeholder="First name">
+			<input type="text" placeholder="Last name">
+			<h4>Select your department?</h4>
+			<input list="departments">
+			<datalist id="departments">
+				<option value="prova"></option>
+				<option value="prova2"></option>
+			</datalist>
+			<button type="button" name="next">Next</button>
+		</section>
+		<section class="form third">
+
+			<img src="" alt="profile">
+			<h4>Upload a picture (optional)</h4>
+			<input type="file">
+
+			<h5>Create a Username:</h5>
+			<input type="text" placeholder="Username">
+			<button type="button" name="next">Let's begin!</button>
+		</section>
+
 	</body>
 </html>
