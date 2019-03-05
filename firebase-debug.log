@@ -31,3 +31,47 @@
 [info] +  hosting: Local server: http://localhost:5000
 [debug] [2019-03-04T11:52:18.269Z] Parsing function triggers
 [info] i  functions: No HTTPS functions found. Use firebase functions:shell if you would like to emulate other types of functions.
+[debug] [2019-03-05T10:17:15.600Z] ----------------------------------------------------------------------
+[debug] [2019-03-05T10:17:15.610Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2019-03-05T10:17:15.611Z] CLI Version:   6.3.1
+[debug] [2019-03-05T10:17:15.611Z] Platform:      darwin
+[debug] [2019-03-05T10:17:15.611Z] Node Version:  v11.8.0
+[debug] [2019-03-05T10:17:15.646Z] Time:          Tue Mar 05 2019 11:17:15 GMT+0100 (GMT+01:00)
+[debug] [2019-03-05T10:17:15.646Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-03-05T10:17:15.690Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-03-05T10:17:15.691Z] > authorizing via signed-in user
+[debug] [2019-03-05T10:17:15.691Z] [iam] checking project worksapp-born2code for permissions ["firebase.projects.get"]
+[debug] [2019-03-05T10:17:15.694Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-03-05T10:17:15.695Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-03-05T10:17:16.062Z] <<< HTTP RESPONSE 200
+[debug] [2019-03-05T10:17:16.106Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/worksapp-born2code:testIamPermissions  
+
+[debug] [2019-03-05T10:17:17.039Z] <<< HTTP RESPONSE 200
+[debug] [2019-03-05T10:17:17.041Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/worksapp-born2code  
+ 
+[debug] [2019-03-05T10:17:17.960Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/mario/Documents/GitHub/worksapp'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2019-03-05T10:17:20.346Z] Fetching environment
+[debug] [2019-03-05T10:17:20.352Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/752738389147:getServerAppConfig  
+ 
+[debug] [2019-03-05T10:17:20.353Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/752738389147/clients/_:getWebAppConfig  
+ 
+[debug] [2019-03-05T10:17:20.623Z] <<< HTTP RESPONSE 200
+[debug] [2019-03-05T10:17:20.623Z] Starting @google-cloud/functions-emulator
+[debug] [2019-03-05T10:17:20.704Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2019-03-05T10:17:24.761Z] Parsing function triggers
+[warn] ⚠  functions: Failed to load functions source code. Ensure that you have the latest SDK by running npm i --save firebase-functions inside the functions directory.
+[debug] [2019-03-05T10:17:24.903Z] Error during trigger parsing:  Error parsing triggers: Cannot find module 'firebase-functions'
+
+Try running "npm install" in your functions directory before deploying.
+[warn] ⚠  functions: Error from emulator. Error parsing triggers: Cannot find module 'firebase-functions'
+
+Try running "npm install" in your functions directory before deploying.
+[debug] [2019-03-05T10:17:24.906Z] 

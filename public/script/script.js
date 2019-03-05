@@ -37,3 +37,13 @@ function sendMessage(event) {
 		$(".chat").scrollTop(10000)
 	}
 }
+
+
+	function logout () { 
+      firebase.auth().signOut().then(function() {
+      alert('logout effettuato')
+    }).catch(function(error) {
+      // An error happened
+      alert('errore')
+      })
+    }
