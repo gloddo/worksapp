@@ -1,11 +1,11 @@
 // Initialize Firebase
 var config = {
-	apiKey: "AIzaSyDg7OV-1D2cuyUh1oaYFRuMTxqDiI7Zq1U",
-	authDomain: "worksapp-born2code.firebaseapp.com",
-	databaseURL: "https://worksapp-born2code.firebaseio.com",
-	projectId: "worksapp-born2code",
-	storageBucket: "worksapp-born2code.appspot.com",
-	messagingSenderId: "752738389147"
+  apiKey: "AIzaSyDg7OV-1D2cuyUh1oaYFRuMTxqDiI7Zq1U",
+  authDomain: "worksapp-born2code.firebaseapp.com",
+  databaseURL: "https://worksapp-born2code.firebaseio.com",
+  projectId: "worksapp-born2code",
+  storageBucket: "worksapp-born2code.appspot.com",
+  messagingSenderId: "752738389147"
 };
 firebase.initializeApp(config);
 
@@ -15,6 +15,18 @@ $(document).ready(() => {
   $(".menu-button").click(function() {
     $("aside").toggle("slide");
   });
+
+  $(".p-icon").click(function() {
+    $("#block").toggle("slide", {
+      direction: "down"
+    });
+  });
+
+  $(".home").click(function() {
+    $("#block").hide("slide", {
+      direction: "down"
+    });
+  })
 })
 
 
