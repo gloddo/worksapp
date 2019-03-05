@@ -15,6 +15,18 @@ $(document).ready(() => {
 	$(".menu-button").click(function() {
 		$("aside").toggle("slide");
 	});
+
+	$(".p-icon").click(function() {
+		$("#block").toggle("slide", {
+			direction: "down"
+		});
+	});
+
+	$(".home").click(function() {
+		$("#block").hide("slide", {
+			direction: "down"
+		});
+	})
 })
 
 

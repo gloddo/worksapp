@@ -316,8 +316,9 @@ nav ul a {
 }
 
 .message-date {
-    display: block;
-    justify-content: space-between;
+
+  position: relative;
+display: inline-block;
 }
 
 .message-date div {
@@ -542,6 +543,17 @@ nav ul a {
 .sidebar ul li a {
     text-decoration: none;
 }
+
+ #block {
+   background-color: white;
+   width: 100vw;
+   height: 603px;
+   z-index: 99;
+   bottom: 0;
+   position: fixed;
+   display: none;
+}
+
 
 @media (min-width: 993px) {
     .tab {
