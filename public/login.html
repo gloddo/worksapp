@@ -42,20 +42,52 @@
     </form>
   </div>
 
-  <script>
 
+
+  <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDg7OV-1D2cuyUh1oaYFRuMTxqDiI7Zq1U",
+    authDomain: "worksapp-born2code.firebaseapp.com",
+    databaseURL: "https://worksapp-born2code.firebaseio.com",
+    projectId: "worksapp-born2code",
+    storageBucket: "worksapp-born2code.appspot.com",
+    messagingSenderId: "752738389147"
+  };
+  firebase.initializeApp(config);
+</script>
+
+  <script>
     function login () {
 
-    var username = document.getElementById('username').value;
+    var email = document.getElementById('username').value;
     var password = document.getElementById('password').value;
 
-    if (username == 'pippo'&& password == 'pippo') {
-        location.href = "chat.html";
-    }else{
-      alert('password errata')
-    }
+    firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      alert('email o password errate')
+    });
 
-  }
+      firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        
+        var docRef = database.collection("users").doc(user);
+
+        docRef.get().then(function(doc) {
+        if (doc.exists) {
+            location.href="index.html";
+        } else {
+            location.href="paginaprova.html"
+        }
+      });
+    }
+  })
+}
+
+    
 
 
   </script>
