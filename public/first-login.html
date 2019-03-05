@@ -14,33 +14,48 @@
 		<style media="screen">
 			.form {
 				display: flex;
-				flex-direction: column;
 				width: 375px;
 				padding: 30px;
-				align-items: center;
+				justify-content: center;
 			}
-
-			.form form {
-				margin: 0
+			.form .login-form {
+				position: fixed;
+				bottom: 80px;
+				padding: 0 10px;
+				margin: 0;
 			}
-
+			.form input {
+				margin: 5px 0;
+				width: 280px;
+			}
 			.form h4 {
 				margin: 10px 0 5px;
 			}
-
 			.form button {
-				margin: 10px;
+				width: 280px;
+				margin-top: 15px;
 			}
 			.second, .third {
 				display: none;
 			}
+			.welcome-logo img{
+				width: 300px
+			}
+			.third img {
+				height: 150px;
+				margin: 15px;
+				border-radius: 75px;
+				align-self: center;
+			}
 		</style>
 	</head>
 	<body>
+		<section class="welcome-logo">
+			<h2>Welcome to</h2>
+			<img src="res/logo-blk-b.png" alt="WorksApp">
+		</section>
 
 		<section class="form">
-			<h2>Welcome to</h2>
-			<img src="" alt="WorksApp">
 			<form class="login-form first">
 				<p class="login-label">
 		          Set up your new password:
@@ -51,31 +66,76 @@
 		        </p>
 		        <input type="password" class="login-input" placeholder="Repeat new password">
 
-				<button type="button" name="next">Next</button>
+				<button type="button" id="first-btn" name="next">Next</button>
+			</form>
+
+			<form class="login-form second">
+				<p class="login-label">
+		          Enter your name:
+		        </p>
+		        <input type="text" class="login-input" placeholder="First name">
+				<input type="text" class="login-input" placeholder="Last name">
+		        <p class="login-label">
+		          Select your department:
+		        </p>
+				<input list="departments" class="login-input" placeholder="Choose your department">
+				<datalist id="departments">
+					<option value="prova"></option>
+					<option value="prova2"></option>
+				</datalist>
+
+				<button type="button" id="second-btn" name="next">Next</button>
+			</form>
+
+			<form class="login-form third">
+
+				<img src="res\photo.png" alt="profile">
+				<p class="login-label">
+		          Upload a picture (optional)
+		        </p>
+				<input type="file">
+				<p class="login-label">
+		          Create a Username:
+		        </p>
+				<input type="text" class="login-input" placeholder="Username">
+				<button type="button" id="last-btn" name="next">Let's begin!</button>
 			</form>
 		</section>
-		<form class="login-form second">
-			<h4>Enter your name:</h4>
-			<input type="text" placeholder="First name">
-			<input type="text" placeholder="Last name">
-			<h4>Select your department?</h4>
-			<input list="departments">
-			<datalist id="departments">
-				<option value="prova"></option>
-				<option value="prova2"></option>
-			</datalist>
-			<button type="button" name="next">Next</button>
-		</form>
-		<form class="login-form third">
 
-			<img src="" alt="profile">
-			<h4>Upload a picture (optional)</h4>
-			<input type="file">
+		<script type="text/javascript">
+			$("#first-btn").click(function(){
+				if(!checkForm(this))
+					console.log("manca qualcosa");
+				else {
+					$(".first").hide("slide", {direction: "left"})
+					$(".second").show("slide", {direction: "right"})
+				}
 
-			<h5>Create a Username:</h5>
-			<input type="text" placeholder="Username">
-			<button type="button" name="next">Let's begin!</button>
-		</form>
+			})
 
+			$("#second-btn").click(function(){
+				if(!checkForm(this))
+					console.log("manca qualcosa");
+				else {
+					$(".second").hide("slide", {direction: "left"})
+					$(".third").show("slide", {direction: "right"})
+				}
+
+			})
+
+			$("#last-btn").click(function(){
+				if(!checkForm(this))
+					console.log("manca qualcosa");
+
+			})
+
+			function checkForm(btn){
+				$(btn).parent("form").children("input").each((i, el) => {
+					console.log(el.value);
+					if(el.value == '') return false
+				})
+				return true
+			}
+		</script>
 	</body>
 </html>

@@ -411,9 +411,10 @@ nav ul a {
     align-items: center;
 }
 
-.login-logo {
+.login-logo, .welcome-logo {
     height: 250px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
