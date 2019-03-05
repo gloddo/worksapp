@@ -18,7 +18,7 @@ function sendMessage(event) {
     });
     var date = new Date().toLocaleDateString();
     $(".chat").append(
-        `<article class="chat-row" id=s${c}>
+      `<article class="chat-row" id=s${c}>
         <span class="message">
           ${event.target.value}
         </span>
@@ -30,10 +30,7 @@ function sendMessage(event) {
             ${time}
           </div>
         </span>
-      </article>`) <<
-      << << < HEAD ===
-      === = <<
-      << << < HEAD
+      </article>`)
     event.target.value = ""
     $(".unseen").removeClass("unseen")
     //  $(".chat").scrollTop($(".chat")[0].scrollHeight)
@@ -49,18 +46,4 @@ function logout() {
     // An error happened
     alert('errore')
   })
-} ===
-=== = >>>
->>> > master
-event.target.value = ""
-$(".unseen").removeClass("unseen")
-//  $(".chat").scrollTop($(".chat")[0].scrollHeight)
-$(".chat").scrollTop(10000)
-} <<
-<< << < HEAD
-} ===
-=== =
-} >>>
->>> > 0e1 b12a2b1a6b2f0398a7d95ec42681a1c988f8f
-  >>>
-  >>> > master
+}
