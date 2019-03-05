@@ -8,6 +8,7 @@ var config = {
 	messagingSenderId: "752738389147"
 }
 firebase.initializeApp(config);
+var db = firebase.firestore();
 
 $(document).ready(() => {
 	$(".chat").scrollTop(100000)
