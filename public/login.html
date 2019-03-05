@@ -59,10 +59,6 @@
 </script>
 
   <script>
-
-
-
-
     function login () {
 
     var email = document.getElementById('username').value;
@@ -77,20 +73,21 @@
 
       firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
-        location.href="index.html"
-      } else {
+        
+        var docRef = database.collection("users").doc(user);
+
+        docRef.get().then(function(doc) {
+        if (doc.exists) {
+            location.href="index.html";
+        } else {
+            location.href="paginaprova.html"
         }
       });
     }
+  })
+}
 
-    function logout () { 
-      firebase.auth().signOut().then(function() {
-      alert('logout effettuato')
-    }).catch(function(error) {
-      // An error happened
-      alert('errore')
-      })
-    }
+    
 
 
   </script>
