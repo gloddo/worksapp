@@ -31,6 +31,7 @@
 [info] +  hosting: Local server: http://localhost:5000
 [debug] [2019-03-04T11:52:18.269Z] Parsing function triggers
 [info] i  functions: No HTTPS functions found. Use firebase functions:shell if you would like to emulate other types of functions.
+<<<<<<< .merge_file_oxsINC
 [debug] [2019-03-05T10:17:15.600Z] ----------------------------------------------------------------------
 [debug] [2019-03-05T10:17:15.610Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
 [debug] [2019-03-05T10:17:15.611Z] CLI Version:   6.3.1
@@ -75,3 +76,5 @@ Try running "npm install" in your functions directory before deploying.
 
 Try running "npm install" in your functions directory before deploying.
 [debug] [2019-03-05T10:17:24.906Z] 
+=======
+>>>>>>> .merge_file_nxS3Dz
