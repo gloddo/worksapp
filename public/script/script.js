@@ -1,3 +1,14 @@
+// Initialize Firebase
+var config = {
+	apiKey: "AIzaSyDg7OV-1D2cuyUh1oaYFRuMTxqDiI7Zq1U",
+	authDomain: "worksapp-born2code.firebaseapp.com",
+	databaseURL: "https://worksapp-born2code.firebaseio.com",
+	projectId: "worksapp-born2code",
+	storageBucket: "worksapp-born2code.appspot.com",
+	messagingSenderId: "752738389147"
+};
+firebase.initializeApp(config);
+
 $(document).ready(() => {
 	$(".chat").scrollTop(100000)
 
