@@ -31,6 +31,7 @@ $(document).ready(() => {
 })
 
 
+
 function sendMessage(event) {
 	let c = 0;
 	if (event.which == 13 && event.target.value) {
