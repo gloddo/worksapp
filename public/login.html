@@ -60,9 +60,9 @@
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
-      alert('email o password errate')
+      console.log('email o password errate')
     });
-   
+
       firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
         console.log(user)
