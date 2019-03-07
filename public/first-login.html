@@ -9,6 +9,7 @@
 	    <script src="jquery/jquery-ui.js"></script>
 	    <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
 	    <link rel="stylesheet" href="style.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha1/0.6.0/sha1.js"></script>
 	    <script type="text/javascript" src="script/script.js"></script>
 
 		<style media="screen">
@@ -47,6 +48,53 @@
 				border-radius: 75px;
 				align-self: center;
 			}
+
+			@-webkit-keyframes showTooltip {
+			  from {opacity: 0;}
+			    to {opacity: 1;}
+			}
+			@-moz-keyframes showTooltip {
+			  from {opacity: 0;}
+			    to {opacity: 1;}
+			}
+			@keyframes showTooltip {
+			  from {opacity: 0;}
+			    to {opacity: 1;}
+			}
+
+			.message-error:after {
+			  content: attr(data-tooltip);
+			  position: absolute;
+			  top: -25px;
+			  left: 5%;
+			  display: none;
+			  padding: 1em 2em;
+			  color: white;
+			  width: 150px;
+			  padding: 5px 0;
+			  border-radius: 6px;
+			}
+
+			.message-error:hover:after {
+			  display: block;
+			  -webkit-animation: showTooltip 0.35s ease-in-out;
+			  -moz-animation: showTooltip 0.35s ease-in-out;
+			  animation: showTooltip 0.35s ease-in-out;
+			}
+
+			.message-error:after {
+				color: black;
+				font-size: 0.7em;
+			  background-color: #fff;
+			  padding: 5px;
+			  border-radius: 6px;
+			  border: 2px solid #ccc
+			}
+
+			p.error{
+				color: red;
+				font-size: 1em;
+			}
 		</style>
 	</head>
 	<body>
@@ -60,7 +108,10 @@
 				<p class="login-label">
 		          Set up your new password:
 		        </p>
-		        <input type="password" class="login-input" placeholder="New password">
+				<div class="message-error" data-tooltip="Password must be at least 8 characters and must contain at least 1 number">
+					<input type="password" class="login-input" placeholder="New password">
+				</div>
+
 		        <p class="login-label">
 		          Confirm password:
 		        </p>
@@ -103,10 +154,12 @@
 		</section>
 
 		<script type="text/javascript">
+
 			$("#first-btn").click(function(){
-				if(!checkForm(this))
-					console.log("manca qualcosa");
+				if(!checkPsw(this))
+					$("input").css("border-color", "red")
 				else {
+					$("input").css("border-color", "#0fa3b1")
 					$(".first").hide("slide", {direction: "left"})
 					$(".second").show("slide", {direction: "right"})
 				}
@@ -114,9 +167,10 @@
 			})
 
 			$("#second-btn").click(function(){
-				if(!checkForm(this))
-					console.log("manca qualcosa");
+				if(!checkForm(this, "name"))
+					$("input").css("border-color", "red")
 				else {
+					$("input").css("border-color", "#0fa3b1")
 					$(".second").hide("slide", {direction: "left"})
 					$(".third").show("slide", {direction: "right"})
 				}
@@ -124,17 +178,66 @@
 			})
 
 			$("#last-btn").click(function(){
-				if(!checkForm(this))
-					console.log("manca qualcosa");
-
+				if(!checkForm(this, "username"))
+					$("input").css("border-color", "red")
+				else {
+					$("input").css("border-color", "#0fa3b1")
+				}
 			})
 
-			function checkForm(btn){
+
+			function checkForm(btn, str){
+				var invalid = $("<p class='error'>Something's missing!</p>")
 				$(btn).parent("form").children("input").each((i, el) => {
-					console.log(el.value);
-					if(el.value == '') return false
+					switch (str) {
+						case "name":
+							$(invalid).insertBefore($(btn))
+							if(el.value.length == 0) return false
+							break
+						case "username":
+							$(invalid).insertBefore($(btn))
+							if(el.value.length == 0 && i) return false
+							break
+					}
 				})
+				$(".error").remove()
 				return true
+			}
+
+			function hashing(psw) {
+				sha1(psw);
+				var hash = sha1.create()
+				hash.update(psw)
+				hash.hex()
+				return hash
+			}
+
+			function checkPsw(btn){
+				var strength = new RegExp("^(?=.*[a-z])(?=.*[0-9])(?=.{8,})")
+				var np1 = $(btn).parent("form").find("input")[0].value
+				var np2 = $(btn).parent("form").find("input")[1].value
+				var invalid = $("<p class='error'>Invalid password!</p>")
+				if(!strength.test(np1)) {
+					$(invalid).insertBefore($(btn))
+					return false
+				}
+				else if(np2 && np2 == np1) {
+					$(".error").remove()
+					var user = firebase.auth().currentUser
+					var newPassword = hashing(np1)
+
+					user.updatePassword(newPassword).then(function() {
+					  return true
+					}).catch(function(error) {
+					  console.error(error)
+					})
+				}
+				else {
+					$(".error").remove()
+					invalid = $("<p class='error'>Passwords don't match!</p>")
+					$(invalid).insertBefore($(btn))
+					return false
+				}
 			}
 		</script>
 	</body>
