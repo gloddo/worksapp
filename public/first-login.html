@@ -144,11 +144,11 @@
 				<p class="login-label">
 		          Upload a picture (optional)
 		        </p>
-				<input type="file">
+				<input type="file" id="picture">
 				<p class="login-label">
 		          Create a Username:
 		        </p>
-				<input type="text" class="login-input" placeholder="Username">
+				<input type="text" class="login-input" placeholder="Username" id="username">
 				<button type="button" id="last-btn" name="next">Let's begin!</button>
 			</form>
 		</section>
@@ -187,19 +187,49 @@
 
 
 			function checkForm(btn, str){
+				var name = []
 				var invalid = $("<p class='error'>Something's missing!</p>")
 				$(btn).parent("form").children("input").each((i, el) => {
 					switch (str) {
 						case "name":
-							$(invalid).insertBefore($(btn))
-							if(el.value.length == 0) return false
+							if(el.value.length == 0) {
+								$(invalid).insertBefore($(btn))
+								return false
+							}
+							name.push(el.value)
 							break
 						case "username":
-							$(invalid).insertBefore($(btn))
-							if(el.value.length == 0 && i) return false
+							if(el.value.length == 0 && i) {
+								$(invalid).insertBefore($(btn))
+								return false
+							}
+							name.push(el.value)
 							break
 					}
 				})
+				if(name.length > 1){
+					$("#username").val(name[0] + " " + name[1])
+				} else {
+					var photo = "url of Placeholder Picture"
+					if($("#picture").val()){
+						var storageRef = firebase.storage().ref().child(userId)
+						storageRef.put($("#picture").prop("files")[0])
+						.then((snapshot)=>{
+							console.log("Picture uploaded");
+						})
+					}
+					user.updateProfile({
+					  displayName: name[0],
+					  photoURL: photo
+					}).then(function() {
+						console.log("Profile succesfully updated.");
+					  var displayName = user.displayName;
+					  var photoURL = user.photoURL;
+
+					}, function(error) {
+					  console.error(error);
+					});
+				}
 				$(".error").remove()
 				return true
 			}
@@ -223,14 +253,15 @@
 				}
 				else if(np2 && np2 == np1) {
 					$(".error").remove()
-					var user = firebase.auth().currentUser
-					var newPassword = hashing(np1)
-
-					user.updatePassword(newPassword).then(function() {
-					  return true
-					}).catch(function(error) {
-					  console.error(error)
-					})
+					// var user = firebase.auth().currentUser
+					// var newPassword = hashing(np1)
+					//
+					// user.updatePassword(newPassword).then(function() {
+					//   console.log("Password aggiornata con successo per l'utente "+user.uid);
+					// }).catch(function(error) {
+					//   console.error(error)
+					// })
+					return true
 				}
 				else {
 					$(".error").remove()
